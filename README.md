@@ -46,11 +46,14 @@ CaseWorthy's WYSIWYG editor has specific limitations. Everything in this repo is
 |-----------|--------------|
 | Inline CSS (`style=""`) | `<style>` blocks |
 | SVG icons (`<svg viewBox="">`) | Icon libraries (Font Awesome, etc.) |
+| SVG animations (`<animate>`) | JavaScript (`<script>`, `onclick`, etc.) |
+| SVG clipPath, defs, gradients | External CSS (`<link>`) |
+| SVG text with font styling | Google Fonts or external fonts |
 | Unicode emoji | External images (unless you host them) |
-| Links (`<a href="">`) | JavaScript (`<script>`, `onclick`, etc.) |
-| Flexbox (inline) | External CSS (`<link>`) |
-| System fonts (Arial) | Google Fonts or external fonts |
-| Gradients, shadows, border-radius | CSS classes/IDs (no style block to define them) |
+| Links (`<a href="">`) | CSS classes/IDs (no style block to define them) |
+| Flexbox (inline) | Form inputs (no JS to process them) |
+| System fonts (system-ui, Segoe UI, Roboto, Arial) | iframes |
+| Gradients, shadows, border-radius | |
 
 ## Template Types You Can Build
 
@@ -98,6 +101,7 @@ The `skill/SKILL.md` file is a complete Claude skill that can be downloaded and 
 - All platform constraints encoded so Claude follows them automatically
 - Template type definitions with section patterns
 - A library of 11 pre-built SVG icons ready to use
+- SVG animation library (shimmer text, pulsing indicators, loading bars, spinners) — no JavaScript needed
 - Three color palettes (Professional Blue, Warm Earth, Dark Theme)
 - Build workflow that produces copy-paste ready HTML
 

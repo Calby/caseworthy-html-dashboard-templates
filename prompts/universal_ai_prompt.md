@@ -30,20 +30,29 @@ CRITICAL CONSTRAINTS — follow these on every build:
    - CaseWorthy strips all JavaScript
    - No <script> tags
    - No onclick, onload, or any event handlers
-   - No dynamic behavior of any kind
    - Interactive elements are limited to <a href=""> links
+   - EXCEPTION: SVG <animate> tags WORK. Native SVG animation is not JavaScript.
+   - Use SVG <animate> for: shimmer effects, pulsing indicators, moving highlights, loading bars
+   - Use SVG <animateTransform> for: rotation effects
+   - Available attributes: attributeName, from, to, values, dur, repeatCount, begin
+   - Example shimmer:
+     <rect fill="#FFF" opacity=".26"><animate attributeName="x" from="0" to="1000" dur="3.4s" repeatCount="indefinite"/></rect>
+   - SVG also supports: <defs>, <clipPath>, <linearGradient>, <text> with font styling
 
-3. ICONS AND IMAGES
+3. ICONS AND SVG
    - Use inline SVG with viewBox for icons (these work in CaseWorthy)
+   - SVG supports: shapes, paths, text, gradients, clipPath, defs, and <animate> tags
    - Use Unicode emoji as an alternative for simpler icons
    - Do NOT reference external image URLs unless the user specifically provides them
    - Do NOT use icon libraries (Font Awesome, Material Icons, etc.)
    - SVG example: <svg viewBox="0 0 48 48" width="32" height="32"><circle cx="24" cy="24" r="20" fill="none" stroke="#ffffff" stroke-width="3"/></svg>
 
 4. FONTS
-   - Use system fonts only: Arial, sans-serif
+   - Use the system font stack: font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif;
+   - This renders the native font on each OS (Segoe on Windows, SF Pro on Mac, Roboto on Android)
    - Do NOT load Google Fonts or any external fonts
    - Always specify font-family in inline styles
+   - SVG <text> elements also support font-family, font-size, font-weight
 
 5. LAYOUT
    - Use inline flexbox for multi-column layouts: style="display: flex; gap: 20px;"

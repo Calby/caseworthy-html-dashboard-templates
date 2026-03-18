@@ -10,6 +10,10 @@ A cheat sheet for building HTML templates inside CaseWorthy. Pin this, print it,
 |---------|---------|-------|
 | Inline CSS | `style="color: #333; padding: 10px;"` | Most reliable approach |
 | SVG icons | `<svg viewBox="0 0 48 48" width="32" height="32">...</svg>` | Use for all icons |
+| SVG animations | `<animate attributeName="x" from="0" to="100" dur="3s" repeatCount="indefinite"/>` | Native SVG, not JavaScript |
+| SVG clipPath | `<clipPath id="clip"><text>...</text></clipPath>` | For shimmer text effects |
+| SVG defs | `<defs>...</defs>` | For reusable definitions |
+| SVG text | `<text font-family="system-ui" font-size="40">` | Styled text inside SVG |
 | Unicode emoji | `&#128200;` or copy-paste 📈 | Simpler alternative to SVG |
 | Links | `<a href="https://example.com">Click</a>` | Standard anchor tags |
 | Flexbox | `style="display: flex; gap: 20px;"` | For multi-column layouts |
@@ -19,6 +23,7 @@ A cheat sheet for building HTML templates inside CaseWorthy. Pin this, print it,
 | Border-radius | `style="border-radius: 8px;"` | Rounded corners work |
 | Gradients | `style="background: linear-gradient(135deg, #1a5276, #2e86c1);"` | For hero banners |
 | Box shadow | `style="box-shadow: 0 2px 8px rgba(0,0,0,0.1);"` | Subtle depth effects |
+| System fonts | `font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif` | Native OS fonts |
 
 ## What Doesn't Work
 
@@ -116,6 +121,78 @@ Copy and paste these directly into your templates.
   <rect x="34" y="8" width="8" height="34" rx="1" fill="#ffffff"/>
 </svg>
 ```
+
+---
+
+## SVG Animations
+
+CaseWorthy supports native SVG `<animate>` tags. No JavaScript needed.
+
+### Shimmer Text
+```html
+<svg viewBox="0 0 1000 72" width="100%" height="72">
+  <defs>
+    <clipPath id="title_clip">
+      <text x="500" y="46" text-anchor="middle"
+            font-family="system-ui, Segoe UI, Roboto, Arial, sans-serif"
+            font-size="40" font-weight="800">Your Title Here</text>
+    </clipPath>
+  </defs>
+  <text x="500" y="46" text-anchor="middle"
+        font-family="system-ui, Segoe UI, Roboto, Arial, sans-serif"
+        font-size="40" font-weight="800" fill="#23466E">Your Title Here</text>
+  <rect x="0" y="0" width="160" height="72" clip-path="url(#title_clip)"
+        fill="#FFFFFF" opacity=".26">
+    <animate attributeName="x" from="0" to="1000" dur="3.4s" repeatCount="indefinite"/>
+  </rect>
+</svg>
+```
+
+### Pulsing Dot (Online/Active Status)
+```html
+<svg viewBox="0 0 24 24" width="16" height="16" style="display: inline-block; vertical-align: middle;">
+  <circle cx="12" cy="12" r="6" fill="#27ae60" opacity="0.4">
+    <animate attributeName="r" values="6;10;6" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.4;0.1;0.4" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="12" cy="12" r="4" fill="#27ae60"/>
+</svg>
+```
+
+### Loading Bar
+```html
+<svg viewBox="0 0 400 8" width="100%" height="8">
+  <rect x="0" y="0" width="400" height="8" rx="4" fill="#e5e7eb"/>
+  <rect x="0" y="0" width="120" height="8" rx="4" fill="#2e86c1">
+    <animate attributeName="x" from="-120" to="400" dur="2s" repeatCount="indefinite"/>
+  </rect>
+</svg>
+```
+
+### Spinning Loader
+```html
+<svg viewBox="0 0 48 48" width="24" height="24" style="display: inline-block; vertical-align: middle;">
+  <circle cx="24" cy="24" r="16" fill="none" stroke="#2e86c1" stroke-width="3" stroke-dasharray="20 80">
+    <animateTransform attributeName="transform" type="rotate" from="0 24 24" to="360 24 24" dur="2s" repeatCount="indefinite"/>
+  </circle>
+</svg>
+```
+
+### Blinking Attention Arrow
+```html
+<svg viewBox="0 0 24 24" width="18" height="18" style="display: inline-block; vertical-align: middle;">
+  <path d="M5 12 L19 12 M13 6 L19 12 L13 18" fill="none" stroke="#2e86c1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/>
+  </path>
+</svg>
+```
+
+### Animation Tips
+- Keep `dur` at 2-4 seconds for subtle, professional motion
+- Use `repeatCount="indefinite"` for continuous loops
+- Combine multiple `<animate>` on one element for complex effects
+- Use unique `id` values for clipPath when multiple SVGs are on the same page
+- `attributeName` can target: x, y, r, width, height, opacity, fill, stroke
 
 ---
 
