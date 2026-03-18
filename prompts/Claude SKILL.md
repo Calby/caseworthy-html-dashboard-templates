@@ -11,19 +11,21 @@ Build HTML templates that work inside CaseWorthy's WYSIWYG editor. One request p
 
 These rules apply to EVERY build. Do not deviate.
 
-### 1. Inline CSS Only
-- Every element gets styles via `style=""` attribute
-- Do NOT use `<style>` blocks
+### 1. CSS Styling
+- **Inline CSS works**: `style=""` on every element — most reliable, always works
+- **Style blocks work**: `<style>.class { }</style>` — confirmed working in CaseWorthy
+- **Both approaches are valid**. Use style blocks for repeated styles, inline for one-offs.
 - Do NOT use `<link>` to external stylesheets
-- Do NOT use CSS classes or IDs for styling
+- Confirmed working CSS features: gradients, box-shadow, border-radius, rgba(), flexbox, flex-wrap, inline-block, position relative, overflow hidden, max-width with auto margins
 
 ```html
-<!-- CORRECT -->
-<div style="background-color: #1a5276; padding: 20px; border-radius: 8px;">
+<!-- BOTH WORK -->
+<style>
+  .card { background: #1a5276; padding: 20px; border-radius: 8px; color: #fff; }
+</style>
+<div class="card">Styled with class</div>
 
-<!-- WRONG -->
-<style>.hero { background-color: #1a5276; }</style>
-<div class="hero">
+<div style="background: #1a5276; padding: 20px; border-radius: 8px; color: #fff;">Styled inline</div>
 ```
 
 ### 2. No JavaScript

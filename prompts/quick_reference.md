@@ -8,21 +8,32 @@ A cheat sheet for building HTML templates inside CaseWorthy. Pin this, print it,
 
 | Element | Example | Notes |
 |---------|---------|-------|
-| Inline CSS | `style="color: #333; padding: 10px;"` | Most reliable approach |
+| Inline CSS | `style="color: #333; padding: 10px;"` | Always works |
+| Style blocks | `<style>.card { background: #fff; }</style>` | Confirmed working |
+| CSS classes | `<div class="card">` | Works with style blocks |
 | SVG icons | `<svg viewBox="0 0 48 48" width="32" height="32">...</svg>` | Use for all icons |
 | SVG animations | `<animate attributeName="x" from="0" to="100" dur="3s" repeatCount="indefinite"/>` | Native SVG, not JavaScript |
-| SVG clipPath | `<clipPath id="clip"><text>...</text></clipPath>` | For shimmer text effects |
-| SVG defs | `<defs>...</defs>` | For reusable definitions |
+| SVG animateTransform | `<animateTransform type="rotate" from="0" to="360" dur="2s"/>` | Rotation works |
+| SVG animate begin delay | `begin="0.5s"` | Staggered timing works |
+| SVG clipPath + defs | `<clipPath>`, `<defs>`, `<linearGradient>`, `<radialGradient>` | All confirmed |
 | SVG text | `<text font-family="system-ui" font-size="40">` | Styled text inside SVG |
-| Unicode emoji | `&#128200;` or copy-paste 📈 | Simpler alternative to SVG |
+| Unicode emoji (entities) | `&#128200;` | Works |
+| Unicode emoji (direct) | Copy-paste 📈 | Works |
 | Links | `<a href="https://example.com">Click</a>` | Standard anchor tags |
-| Flexbox | `style="display: flex; gap: 20px;"` | For multi-column layouts |
-| Inline-block | `style="display: inline-block; width: 30%;"` | For side-by-side elements |
-| Tables | `<table>` with inline styles | For actual tabular data |
-| Divs | `<div style="...">` | Primary layout element |
-| Border-radius | `style="border-radius: 8px;"` | Rounded corners work |
-| Gradients | `style="background: linear-gradient(135deg, #1a5276, #2e86c1);"` | For hero banners |
-| Box shadow | `style="box-shadow: 0 2px 8px rgba(0,0,0,0.1);"` | Subtle depth effects |
+| Styled link buttons | `<a style="padding: 10px; background: #2e86c1; color: #fff;">` | Links as buttons |
+| Flexbox | `style="display: flex; gap: 20px;"` | Multi-column layouts |
+| Flex-wrap | `style="flex-wrap: wrap;"` | Responsive wrapping |
+| Inline-block | `style="display: inline-block; width: 30%;"` | Side-by-side elements |
+| Tables | `<table>` with styled headers/rows | Tabular data |
+| Border-radius | `style="border-radius: 8px;"` | Rounded corners |
+| CSS Gradients | `style="background: linear-gradient(135deg, #1a5276, #2e86c1);"` | Hero banners |
+| Box shadow | `style="box-shadow: 0 4px 12px rgba(0,0,0,0.15);"` | Depth effects |
+| RGBA transparency | `style="background: rgba(46, 134, 193, 0.15);"` | Transparent colors |
+| Border-left accent | `style="border-left: 4px solid #e74c3c;"` | Color-coded rows |
+| Position relative | `style="position: relative;"` | Confirmed |
+| Overflow hidden | `style="overflow: hidden;"` | Confirmed |
+| Max-width centering | `style="max-width: 500px; margin: 0 auto;"` | Confirmed |
+| HR styling | `<hr style="border: none; border-top: 2px solid #2e86c1;">` | Custom dividers |
 | System fonts | `font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif` | Native OS fonts |
 
 ## What Doesn't Work
@@ -31,12 +42,10 @@ A cheat sheet for building HTML templates inside CaseWorthy. Pin this, print it,
 |---------|-----|
 | `<script>` tags | JavaScript is stripped |
 | `onclick`, `onload`, etc. | Event handlers are stripped |
-| `<style>` blocks | May not render — use inline instead |
 | External CSS (`<link>`) | Not loaded |
 | External fonts (Google Fonts) | Not loaded |
 | Icon libraries (Font Awesome) | Requires external CSS |
 | External images (usually) | Unless you provide a hosted URL |
-| CSS classes/IDs for styling | No `<style>` block to define them |
 | Form inputs | No JS to process them |
 | iframes | Security restrictions |
 

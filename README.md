@@ -9,10 +9,11 @@ CaseWorthy's WYSIWYG editor accepts raw HTML, which means you can build polished
 ```
 ├── README.md                          ← You are here
 ├── templates/
-│   └── help_center_dashboard.html     ← Ready-to-use help center template
+│   ├── help_center_dashboard.html     ← Ready-to-use help center template
+│   └── compatibility_test.html        ← 24-point test suite for verifying what works
 ├── prompts/
 │   ├── universal_ai_prompt.md         ← System prompt for any AI assistant
-│   └── quick_reference.md             ← Cheat sheet: what works, SVG icons, layouts
+│   └── quick_reference.md             ← Cheat sheet: what works, SVG icons, animations, layouts
 └── skill/
     └── SKILL.md                       ← Claude skill file (download and use directly)
 ```
@@ -44,16 +45,20 @@ CaseWorthy's WYSIWYG editor has specific limitations. Everything in this repo is
 
 | What Works | What Doesn't |
 |-----------|--------------|
-| Inline CSS (`style=""`) | `<style>` blocks |
+| Inline CSS (`style=""`) | JavaScript (`<script>`, `onclick`, etc.) |
+| Style blocks (`<style>` with classes) | External CSS (`<link>`) |
 | SVG icons (`<svg viewBox="">`) | Icon libraries (Font Awesome, etc.) |
-| SVG animations (`<animate>`) | JavaScript (`<script>`, `onclick`, etc.) |
-| SVG clipPath, defs, gradients | External CSS (`<link>`) |
-| SVG text with font styling | Google Fonts or external fonts |
-| Unicode emoji | External images (unless you host them) |
-| Links (`<a href="">`) | CSS classes/IDs (no style block to define them) |
-| Flexbox (inline) | Form inputs (no JS to process them) |
-| System fonts (system-ui, Segoe UI, Roboto, Arial) | iframes |
-| Gradients, shadows, border-radius | |
+| SVG animations (`<animate>`, `<animateTransform>`) | Google Fonts or external fonts |
+| SVG clipPath, defs, linear/radial gradients | External images (unless you host them) |
+| SVG text with font styling | Form inputs (no JS to process them) |
+| Unicode emoji (HTML entities and direct paste) | iframes |
+| Links and styled link buttons | |
+| Flexbox with wrap | |
+| Box shadow, RGBA, gradients, border-radius | |
+| Position relative, overflow hidden | |
+| Max-width centering, HR styling | |
+| Tables with styled headers/rows | |
+| System fonts (system-ui, Segoe UI, Roboto, Arial) | |
 
 ## Template Types You Can Build
 

@@ -1,0 +1,358 @@
+<!-- 
+  ============================================
+  CASEWORTHY COMPATIBILITY TEST TEMPLATE
+  ============================================
+  Paste this entire file OR individual sections 
+  into CaseWorthy's WYSIWYG editor to test what 
+  works. Report back which sections render and 
+  which don't.
+  
+  Each section is independent. Delete any section
+  that doesn't work without affecting the others.
+  ============================================
+-->
+
+
+<!-- ===== TEST 1: INLINE CSS BASICS ===== -->
+<div style="border: 2px solid #2e86c1; border-radius: 8px; padding: 16px; margin-bottom: 20px; background: #f0f7ff;">
+  <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 14px; font-weight: bold; color: #1a5276; margin-bottom: 8px;">TEST 1: Inline CSS Basics</div>
+  <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 13px; color: #333;">If you can see this blue box with rounded corners and light blue background, inline CSS works.</div>
+</div>
+
+
+<!-- ===== TEST 2: CSS GRADIENTS ===== -->
+<div style="background: linear-gradient(135deg, #1a5276 0%, #2e86c1 100%); border-radius: 8px; padding: 16px; margin-bottom: 20px;">
+  <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 14px; font-weight: bold; color: #ffffff; margin-bottom: 8px;">TEST 2: CSS Gradients</div>
+  <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 13px; color: #d4e6f1;">If you see a dark blue to medium blue gradient behind this text, CSS gradients work.</div>
+</div>
+
+
+<!-- ===== TEST 3: BOX SHADOW ===== -->
+<div style="background: #ffffff; border-radius: 8px; padding: 16px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+  <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 14px; font-weight: bold; color: #1a5276; margin-bottom: 8px;">TEST 3: Box Shadow</div>
+  <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 13px; color: #333;">If this white box has a visible shadow underneath it, box-shadow works.</div>
+</div>
+
+
+<!-- ===== TEST 4: FLEXBOX LAYOUT ===== -->
+<div style="display: flex; gap: 12px; margin-bottom: 20px;">
+  <div style="flex: 1; background: #27ae60; border-radius: 8px; padding: 16px;">
+    <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 14px; font-weight: bold; color: #ffffff;">TEST 4A: Flex Item 1</div>
+  </div>
+  <div style="flex: 1; background: #2e86c1; border-radius: 8px; padding: 16px;">
+    <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 14px; font-weight: bold; color: #ffffff;">TEST 4B: Flex Item 2</div>
+  </div>
+  <div style="flex: 1; background: #e67e22; border-radius: 8px; padding: 16px;">
+    <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 14px; font-weight: bold; color: #ffffff;">TEST 4C: Flex Item 3</div>
+  </div>
+</div>
+
+
+<!-- ===== TEST 5: FLEXBOX WITH WRAP ===== -->
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 20px;">
+  <div style="flex: 1; min-width: 200px; background: #8e44ad; border-radius: 8px; padding: 16px;">
+    <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 14px; font-weight: bold; color: #ffffff;">TEST 5: Flex Wrap</div>
+    <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 12px; color: rgba(255,255,255,0.8);">These two boxes should sit side by side and wrap on small screens.</div>
+  </div>
+  <div style="flex: 1; min-width: 200px; background: #e74c3c; border-radius: 8px; padding: 16px;">
+    <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 14px; font-weight: bold; color: #ffffff;">TEST 5B: Second Wrap Item</div>
+    <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 12px; color: rgba(255,255,255,0.8);">If this is next to the purple box, flex-wrap works.</div>
+  </div>
+</div>
+
+
+<!-- ===== TEST 6: INLINE-BLOCK LAYOUT ===== -->
+<div style="text-align: center; margin-bottom: 20px;">
+  <div style="display: inline-block; width: 30%; min-width: 150px; background: #1a5276; border-radius: 8px; padding: 16px; margin: 4px; vertical-align: top;">
+    <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 14px; font-weight: bold; color: #ffffff;">TEST 6A</div>
+  </div>
+  <div style="display: inline-block; width: 30%; min-width: 150px; background: #2e86c1; border-radius: 8px; padding: 16px; margin: 4px; vertical-align: top;">
+    <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 14px; font-weight: bold; color: #ffffff;">TEST 6B</div>
+  </div>
+  <div style="display: inline-block; width: 30%; min-width: 150px; background: #5dade2; border-radius: 8px; padding: 16px; margin: 4px; vertical-align: top;">
+    <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 14px; font-weight: bold; color: #ffffff;">TEST 6C</div>
+  </div>
+</div>
+
+
+<!-- ===== TEST 7: BORDER-LEFT ACCENT ===== -->
+<div style="border: 1px solid #e5e7eb; border-left: 4px solid #e74c3c; border-radius: 6px; padding: 14px 16px; margin-bottom: 20px; background: #ffffff;">
+  <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 14px; font-weight: bold; color: #e74c3c;">TEST 7: Border-Left Accent</div>
+  <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 12px; color: #6b7280;">If you see a red left border on this card, border-left accent styling works.</div>
+</div>
+
+
+<!-- ===== TEST 8: RGBA TRANSPARENCY ===== -->
+<div style="background: rgba(46, 134, 193, 0.15); border: 1px solid rgba(46, 134, 193, 0.3); border-radius: 8px; padding: 16px; margin-bottom: 20px;">
+  <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 14px; font-weight: bold; color: #1a5276; margin-bottom: 8px;">TEST 8: RGBA Transparency</div>
+  <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 13px; color: #333;">If you see a light transparent blue background and border, rgba() values work.</div>
+</div>
+
+
+<!-- ===== TEST 9: STATIC SVG ICON ===== -->
+<div style="border: 2px solid #e5e7eb; border-radius: 8px; padding: 16px; margin-bottom: 20px; background: #ffffff;">
+  <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 14px; font-weight: bold; color: #1a5276; margin-bottom: 12px;">TEST 9: Static SVG Icon</div>
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <svg viewBox="0 0 48 48" width="40" height="40">
+      <circle cx="24" cy="24" r="20" fill="#2e86c1"/>
+      <path d="M14 24 L21 31 L34 18" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 13px; color: #333;">If you see a blue circle with a white checkmark, basic SVG rendering works.</div>
+  </div>
+</div>
+
+
+<!-- ===== TEST 10: SVG WITH DEFS AND CLIPPATH ===== -->
+<div style="border: 2px solid #e5e7eb; border-radius: 8px; padding: 16px; margin-bottom: 20px; background: #ffffff;">
+  <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 14px; font-weight: bold; color: #1a5276; margin-bottom: 12px;">TEST 10: SVG Defs and ClipPath</div>
+  <svg viewBox="0 0 300 50" width="300" height="50">
+    <defs>
+      <clipPath id="test10_clip">
+        <text x="150" y="35" text-anchor="middle" font-family="system-ui, Segoe UI, Roboto, Arial, sans-serif" font-size="30" font-weight="800">CLIP TEST</text>
+      </clipPath>
+    </defs>
+    <text x="150" y="35" text-anchor="middle" font-family="system-ui, Segoe UI, Roboto, Arial, sans-serif" font-size="30" font-weight="800" fill="#23466E">CLIP TEST</text>
+    <rect x="0" y="0" width="300" height="50" clip-path="url(#test10_clip)" fill="#2e86c1" opacity="0.3"/>
+  </svg>
+  <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 12px; color: #6b7280; margin-top: 8px;">If "CLIP TEST" appears in dark blue with a lighter blue overlay clipped to the text shape, defs and clipPath work.</div>
+</div>
+
+
+<!-- ===== TEST 11: SVG ANIMATE (SHIMMER) ===== -->
+<div style="border: 2px solid #e5e7eb; border-radius: 8px; padding: 16px; margin-bottom: 20px; background: #ffffff;">
+  <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 14px; font-weight: bold; color: #1a5276; margin-bottom: 12px;">TEST 11: SVG Animate (Shimmer Effect)</div>
+  <svg viewBox="0 0 500 50" width="100%" height="50">
+    <defs>
+      <clipPath id="test11_clip">
+        <text x="250" y="35" text-anchor="middle" font-family="system-ui, Segoe UI, Roboto, Arial, sans-serif" font-size="30" font-weight="800">SHIMMER TEST</text>
+      </clipPath>
+    </defs>
+    <text x="250" y="35" text-anchor="middle" font-family="system-ui, Segoe UI, Roboto, Arial, sans-serif" font-size="30" font-weight="800" fill="#23466E">SHIMMER TEST</text>
+    <rect x="0" y="0" width="100" height="50" clip-path="url(#test11_clip)" fill="#FFFFFF" opacity=".26">
+      <animate attributeName="x" from="0" to="500" dur="3s" repeatCount="indefinite"/>
+    </rect>
+  </svg>
+  <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 12px; color: #6b7280; margin-top: 8px;">If a white highlight sweeps across "SHIMMER TEST" from left to right repeatedly, SVG animate works.</div>
+</div>
+
+
+<!-- ===== TEST 12: SVG ANIMATE (PULSE) ===== -->
+<div style="border: 2px solid #e5e7eb; border-radius: 8px; padding: 16px; margin-bottom: 20px; background: #ffffff;">
+  <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 14px; font-weight: bold; color: #1a5276; margin-bottom: 12px;">TEST 12: SVG Animate (Pulsing Dot)</div>
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <svg viewBox="0 0 32 32" width="32" height="32">
+      <circle cx="16" cy="16" r="8" fill="#27ae60" opacity="0.4">
+        <animate attributeName="r" values="8;14;8" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.4;0.1;0.4" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="16" cy="16" r="5" fill="#27ae60"/>
+    </svg>
+    <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 13px; color: #333;">If the green dot pulses (grows and fades repeatedly), multi-attribute animate works.</div>
+  </div>
+</div>
+
+
+<!-- ===== TEST 13: SVG ANIMATETRANSFORM (ROTATION) ===== -->
+<div style="border: 2px solid #e5e7eb; border-radius: 8px; padding: 16px; margin-bottom: 20px; background: #ffffff;">
+  <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 14px; font-weight: bold; color: #1a5276; margin-bottom: 12px;">TEST 13: SVG AnimateTransform (Rotation)</div>
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <svg viewBox="0 0 48 48" width="32" height="32">
+      <circle cx="24" cy="24" r="8" fill="none" stroke="#2e86c1" stroke-width="3"/>
+      <circle cx="24" cy="24" r="16" fill="none" stroke="#2e86c1" stroke-width="3" stroke-dasharray="20 80">
+        <animateTransform attributeName="transform" type="rotate" from="0 24 24" to="360 24 24" dur="2s" repeatCount="indefinite"/>
+      </circle>
+    </svg>
+    <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 13px; color: #333;">If the dashed circle rotates around the solid circle, animateTransform works.</div>
+  </div>
+</div>
+
+
+<!-- ===== TEST 14: SVG LINEAR GRADIENT ===== -->
+<div style="border: 2px solid #e5e7eb; border-radius: 8px; padding: 16px; margin-bottom: 20px; background: #ffffff;">
+  <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 14px; font-weight: bold; color: #1a5276; margin-bottom: 12px;">TEST 14: SVG Linear Gradient</div>
+  <svg viewBox="0 0 300 40" width="300" height="40">
+    <defs>
+      <linearGradient id="test14_grad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#1a5276;stop-opacity:1"/>
+        <stop offset="100%" style="stop-color:#27ae60;stop-opacity:1"/>
+      </linearGradient>
+    </defs>
+    <rect x="0" y="0" width="300" height="40" rx="8" fill="url(#test14_grad)"/>
+    <text x="150" y="26" text-anchor="middle" font-family="system-ui, Segoe UI, Roboto, Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">GRADIENT BAR</text>
+  </svg>
+  <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 12px; color: #6b7280; margin-top: 8px;">If you see a bar that fades from dark blue to green with white text, SVG linearGradient works.</div>
+</div>
+
+
+<!-- ===== TEST 15: STYLE BLOCK ===== -->
+<style>
+  .test15_box {
+    border: 2px solid #f39c12;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 20px;
+    background: #fffbeb;
+  }
+  .test15_title {
+    font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #92400e;
+    margin-bottom: 8px;
+  }
+  .test15_text {
+    font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif;
+    font-size: 13px;
+    color: #333;
+  }
+</style>
+<div class="test15_box">
+  <div class="test15_title">TEST 15: Style Block with Classes</div>
+  <div class="test15_text">If this has an orange border and yellow background, &lt;style&gt; blocks and CSS classes work. If it's unstyled plain text, they don't — stick with inline CSS.</div>
+</div>
+
+
+<!-- ===== TEST 16: TABLE LAYOUT ===== -->
+<div style="margin-bottom: 20px;">
+  <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 14px; font-weight: bold; color: #1a5276; margin-bottom: 12px;">TEST 16: Table Layout</div>
+  <table style="width: 100%; border-collapse: collapse; font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 13px;">
+    <tr>
+      <th style="text-align: left; padding: 10px 12px; background: #1a5276; color: #ffffff; border: 1px solid #e5e7eb;">Header 1</th>
+      <th style="text-align: left; padding: 10px 12px; background: #1a5276; color: #ffffff; border: 1px solid #e5e7eb;">Header 2</th>
+      <th style="text-align: left; padding: 10px 12px; background: #1a5276; color: #ffffff; border: 1px solid #e5e7eb;">Header 3</th>
+    </tr>
+    <tr>
+      <td style="padding: 10px 12px; border: 1px solid #e5e7eb;">Row 1 Col 1</td>
+      <td style="padding: 10px 12px; border: 1px solid #e5e7eb;">Row 1 Col 2</td>
+      <td style="padding: 10px 12px; border: 1px solid #e5e7eb;">Row 1 Col 3</td>
+    </tr>
+    <tr>
+      <td style="padding: 10px 12px; border: 1px solid #e5e7eb; background: #f8f9fa;">Row 2 Col 1</td>
+      <td style="padding: 10px 12px; border: 1px solid #e5e7eb; background: #f8f9fa;">Row 2 Col 2</td>
+      <td style="padding: 10px 12px; border: 1px solid #e5e7eb; background: #f8f9fa;">Row 2 Col 3</td>
+    </tr>
+  </table>
+</div>
+
+
+<!-- ===== TEST 17: UNICODE EMOJI ===== -->
+<div style="border: 2px solid #e5e7eb; border-radius: 8px; padding: 16px; margin-bottom: 20px; background: #ffffff;">
+  <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 14px; font-weight: bold; color: #1a5276; margin-bottom: 12px;">TEST 17: Unicode Emoji</div>
+  <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 13px; color: #333;">
+    HTML entities: &#128200; &#128203; &#128221; &#9989; &#128295; &#128176; &#128640; &#128214;
+  </div>
+  <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 13px; color: #333; margin-top: 8px;">
+    Direct paste: 📊 📋 📝 ✅ 🔧 💰 🚀 📖
+  </div>
+  <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 12px; color: #6b7280; margin-top: 8px;">Note which row renders: HTML entities, direct paste, or both.</div>
+</div>
+
+
+<!-- ===== TEST 18: NESTED DIVS WITH POSITION RELATIVE ===== -->
+<div style="position: relative; border: 2px solid #e5e7eb; border-radius: 8px; padding: 16px; margin-bottom: 20px; background: #ffffff; overflow: hidden;">
+  <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 14px; font-weight: bold; color: #1a5276; margin-bottom: 8px;">TEST 18: Position Relative + Overflow Hidden</div>
+  <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 13px; color: #333;">If this box looks normal with no overflow issues, position relative works.</div>
+  <div style="position: absolute; top: -20px; right: -20px; width: 80px; height: 80px; background: rgba(46,134,193,0.1); border-radius: 50%;"></div>
+</div>
+
+
+<!-- ===== TEST 19: HR DIVIDER STYLING ===== -->
+<div style="margin-bottom: 20px;">
+  <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 14px; font-weight: bold; color: #1a5276; margin-bottom: 12px;">TEST 19: HR Divider Styles</div>
+  <hr style="border: none; border-top: 2px solid #2e86c1; margin: 12px 0;">
+  <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 12px; color: #6b7280;">If you see a blue horizontal line above, styled HR tags work.</div>
+</div>
+
+
+<!-- ===== TEST 20: ANCHOR LINK STYLING ===== -->
+<div style="border: 2px solid #e5e7eb; border-radius: 8px; padding: 16px; margin-bottom: 20px; background: #ffffff;">
+  <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 14px; font-weight: bold; color: #1a5276; margin-bottom: 12px;">TEST 20: Link Styling</div>
+  <a href="#" style="display: inline-block; padding: 10px 24px; background: #2e86c1; color: #ffffff; font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 14px; font-weight: bold; text-decoration: none; border-radius: 6px;">Styled Button Link</a>
+  <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 12px; color: #6b7280; margin-top: 8px;">If you see a blue rounded button (not a plain blue underline link), inline-styled anchor tags work as buttons.</div>
+</div>
+
+
+<!-- ===== TEST 21: FLEX WITH SECTION DIVIDER PATTERN ===== -->
+<div style="display: flex; align-items: center; margin-bottom: 20px;">
+  <div style="flex: 1; height: 2px; background: #e5e7eb;"></div>
+  <div style="padding: 0 16px; font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 16px; font-weight: bold; color: #1a1a2e;">
+    TEST 21: Section Divider with Lines
+  </div>
+  <div style="flex: 1; height: 2px; background: #e5e7eb;"></div>
+</div>
+
+
+<!-- ===== TEST 22: MAX-WIDTH CENTERING ===== -->
+<div style="max-width: 500px; margin: 0 auto 20px; border: 2px solid #e5e7eb; border-radius: 8px; padding: 16px; background: #ffffff; text-align: center;">
+  <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 14px; font-weight: bold; color: #1a5276; margin-bottom: 8px;">TEST 22: Max-Width + Auto Margin Centering</div>
+  <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 13px; color: #333;">If this box is narrower than the page and centered, max-width with auto margins works.</div>
+</div>
+
+
+<!-- ===== TEST 23: SVG ANIMATE WITH BEGIN DELAY ===== -->
+<div style="border: 2px solid #e5e7eb; border-radius: 8px; padding: 16px; margin-bottom: 20px; background: #ffffff;">
+  <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 14px; font-weight: bold; color: #1a5276; margin-bottom: 12px;">TEST 23: SVG Animate with Staggered Delays</div>
+  <svg viewBox="0 0 300 40" width="300" height="40">
+    <circle cx="60" cy="20" r="8" fill="#2e86c1" opacity="0.3">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" begin="0s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="120" cy="20" r="8" fill="#2e86c1" opacity="0.3">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" begin="0.3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="180" cy="20" r="8" fill="#2e86c1" opacity="0.3">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" begin="0.6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="240" cy="20" r="8" fill="#2e86c1" opacity="0.3">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" begin="0.9s" repeatCount="indefinite"/>
+    </circle>
+  </svg>
+  <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 12px; color: #6b7280; margin-top: 8px;">If four dots light up one after another in a wave pattern, the "begin" delay attribute works.</div>
+</div>
+
+
+<!-- ===== TEST 24: SVG RADIAL GRADIENT ===== -->
+<div style="border: 2px solid #e5e7eb; border-radius: 8px; padding: 16px; margin-bottom: 20px; background: #ffffff;">
+  <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 14px; font-weight: bold; color: #1a5276; margin-bottom: 12px;">TEST 24: SVG Radial Gradient</div>
+  <svg viewBox="0 0 200 200" width="100" height="100">
+    <defs>
+      <radialGradient id="test24_grad" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" style="stop-color:#2e86c1;stop-opacity:1"/>
+        <stop offset="100%" style="stop-color:#1a5276;stop-opacity:1"/>
+      </radialGradient>
+    </defs>
+    <circle cx="100" cy="100" r="90" fill="url(#test24_grad)"/>
+  </svg>
+  <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 12px; color: #6b7280; margin-top: 8px;">If you see a circle that fades from light blue center to dark blue edge, SVG radialGradient works.</div>
+</div>
+
+
+<!-- ===== RESULTS CHECKLIST ===== -->
+<div style="background: #f0f7ff; border: 2px solid #2e86c1; border-radius: 8px; padding: 20px; margin-top: 30px;">
+  <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 16px; font-weight: bold; color: #1a5276; margin-bottom: 12px;">Results Checklist</div>
+  <div style="font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif; font-size: 13px; color: #333; line-height: 2;">
+    1. Inline CSS Basics<br>
+    2. CSS Gradients<br>
+    3. Box Shadow<br>
+    4. Flexbox (3 columns)<br>
+    5. Flexbox with Wrap<br>
+    6. Inline-Block Layout<br>
+    7. Border-Left Accent<br>
+    8. RGBA Transparency<br>
+    9. Static SVG Icon<br>
+    10. SVG Defs + ClipPath<br>
+    11. SVG Animate (Shimmer)<br>
+    12. SVG Animate (Pulse)<br>
+    13. SVG AnimateTransform (Rotation)<br>
+    14. SVG Linear Gradient<br>
+    15. Style Block with Classes<br>
+    16. Table Layout<br>
+    17. Unicode Emoji (entities vs direct paste)<br>
+    18. Position Relative + Overflow Hidden<br>
+    19. HR Divider Styling<br>
+    20. Anchor Link Styling (button)<br>
+    21. Flex Section Divider with Lines<br>
+    22. Max-Width + Auto Margin Centering<br>
+    23. SVG Animate with Begin Delay (staggered)<br>
+    24. SVG Radial Gradient
+  </div>
+</div>
